@@ -95,5 +95,5 @@ if __name__ == "__main__":
     import os
 
     port = int(os.environ.get("PORT", 7860))  # Default to 7860 if no PORT is set
-    demo.launch(server_name="0.0.0.0", server_port=port, css="footer {visibility: hidden}")
+    demo.launch(server_name="0.0.0.0", server_port=port)
     # demo.launch(css="footer {visibility: hidden}")
