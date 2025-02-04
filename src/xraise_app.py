@@ -5,17 +5,24 @@ from chatbot import ChatBot
 from ui_settings import UISettings
 
 CSS = """
-/* Hide the entire footer area */
+/* Hide the entire footer */
 footer {
-  display: none !important;
+    display: none !important;
 }
-/* Hide any usage / API links (class names differ by version) */
-.usage-links, .share-link-container {
-  display: none !important;
+
+/* Hide containers for "Use with API" or "Share" links */
+.share-btn-container,
+.share-link-container,
+.usage-links,
+.api-docs,
+#share-btn,
+#share-btn-container {
+    display: none !important;
 }
-/* Hide any anchor linking to Gradio’s site (a fallback selector) */
-.gradio-container a[href*="gradio.app"] {
-  display: none !important;
+
+/* Hide any anchor linking to gradio.app (fallback) */
+a[href*="gradio.app"] {
+    display: none !important;
 }
 """
 
