@@ -26,7 +26,7 @@ a[href*="gradio.app"] {
 }
 """
 
-with gr.Blocks(theme=gr.themes.Default(), css = CSS) as demo:
+with gr.Blocks(theme=gr.themes.Default(), css = CSS, title="Demo Bot") as demo:
     with gr.Tabs():
         with gr.TabItem("Origen ChatBot"):
             ##############
