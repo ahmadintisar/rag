@@ -7,7 +7,7 @@ from ui_settings import UISettings
 
 with gr.Blocks(theme=gr.themes.Default()) as demo:
     with gr.Tabs():
-        with gr.TabItem("Origen"):
+        with gr.TabItem("Origen ChatBot"):
             ##############
             # First ROW:
             ##############
@@ -63,10 +63,10 @@ with gr.Blocks(theme=gr.themes.Default()) as demo:
                         '.doc'
                     ],
                     file_count="multiple")
-                temperature_bar = gr.Slider(minimum=0, maximum=1, value=0, step=0.1,
-                                            label="Temperature", info="Choose between 0 and 1")
+                temperature_bar = gr.Slider(minimum=0, maximum=1, value=0, step=0.75,
+                                            label="Creativity", info="Choose between 0 and 1")
                 rag_with_dropdown = gr.Dropdown(
-                    label="RAG with", choices=["Preprocessed doc", "Upload doc: Process for RAG", "Upload doc: Give Full summary"], value="Preprocessed doc")
+                    label="RAG with", choices=["Upload doc: Process for RAG", "Upload doc: Give Full summary"]) #"Preprocessed doc", , value="Preprocessed doc"
                 clear_button = gr.ClearButton([input_txt, chatbot])
             ##############
             # Process:
@@ -95,4 +95,5 @@ if __name__ == "__main__":
     import os
 
     port = int(os.environ.get("PORT", 7860))  # Default to 7860 if no PORT is set
-    demo.launch(server_name="0.0.0.0", server_port=port)
+    demo.launch(server_name="0.0.0.0", server_port=port, css="footer {visibility: hidden}")
+    # demo.launch(css="footer {visibility: hidden}")
