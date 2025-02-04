@@ -5,7 +5,7 @@ from chatbot import ChatBot
 from ui_settings import UISettings
 
 
-with gr.Blocks(theme=gr.themes.Default()) as demo:
+with gr.Blocks(theme=gr.themes.Default(), css = "footer: {visibility: hidden}") as demo:
     with gr.Tabs():
         with gr.TabItem("Origen ChatBot"):
             ##############
