@@ -4,8 +4,22 @@ from upload_file import UploadFile
 from chatbot import ChatBot
 from ui_settings import UISettings
 
+CSS = """
+/* Hide the entire footer area */
+footer {
+  display: none !important;
+}
+/* Hide any usage / API links (class names differ by version) */
+.usage-links, .share-link-container {
+  display: none !important;
+}
+/* Hide any anchor linking to Gradio’s site (a fallback selector) */
+.gradio-container a[href*="gradio.app"] {
+  display: none !important;
+}
+"""
 
-with gr.Blocks(theme=gr.themes.Default(), css = "footer: {visibility: hidden}") as demo:
+with gr.Blocks(theme=gr.themes.Default(), css = CSS) as demo:
     with gr.Tabs():
         with gr.TabItem("Origen ChatBot"):
             ##############
