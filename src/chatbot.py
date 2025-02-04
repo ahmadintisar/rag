@@ -120,10 +120,9 @@ class ChatBot:
             pdf_url = f"{server_url}/{os.path.basename(metadata_dict['source'])}"
 
             # Append cleaned content to the markdown string with two newlines between documents
-            markdown_documents += f"# Retrieved content {counter}:\n" + content + "\n\n" + \
+            markdown_documents += f"# Reference {counter}:\n" + content + "\n\n" + \
                 f"Source: {os.path.basename(metadata_dict['source'])}" + " | " +\
-                f"Page number: {str(metadata_dict['page'])}" + " | " +\
-                f"[View PDF]({pdf_url})" "\n\n"
+                f"Page number: {str(metadata_dict['page'])}" + " | "  "\n\n"
             counter += 1
 
         return markdown_documents
