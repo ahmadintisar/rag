@@ -46,7 +46,7 @@ class ChatBot:
                                   embedding_function=APPCFG.embedding_model)
             else:
                 chatbot.append(
-                    (message, f"No file was uploaded. Please first upload your files using the 'upload' button."))
+                    (message, f"Welcome to Origen Bot. No file was uploaded. Please first upload your files using the 'upload' button."))
                 return "", chatbot, None
 
         docs = vectordb.similarity_search(message, k=APPCFG.k)

@@ -34,7 +34,7 @@ class UploadFile:
                                                         chunk_overlap=APPCFG.chunk_overlap)
             prepare_vectordb_instance.prepare_and_save_vectordb()
             chatbot.append(
-                (" ", "Uploaded files are ready. Please ask your question"))
+                (" ", "Welcome to Origen Bot. Uploaded files are ready. Please ask your question"))
         elif rag_with_dropdown == "Upload doc: Give Full summary":
             final_summary = Summarizer.summarize_the_pdf(file_dir=files_dir[0],
                                                          max_final_token=APPCFG.max_final_token,
