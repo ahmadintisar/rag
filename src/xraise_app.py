@@ -59,7 +59,7 @@ with gr.Blocks(theme=gr.themes.Default(), css = CSS, title="Demo Bot") as demo:
                         bubble_full_width=True,
                         height=500,
                         avatar_images=(
-                            ("images/user.png"), "images/origen.png"),
+                            ("images/user.png"), "images/techbyorigen_logo.jpeg"),
                         # render=True,
                         # interactive=True
                     )
