@@ -56,7 +56,7 @@ with gr.Blocks(css=CSS, title="Demo Bot") as demo:
                 with gr.Column(scale=1, elem_id="brand_column"):
                     # Centered brand image on the left
                     displayed_logo = gr.Image(
-                        value="images/techbyorigen_logo.jpeg",
+                        value="images/branded_content.png",
                         label="Branded Image",
                         show_label=False,
                         interactive=False,
