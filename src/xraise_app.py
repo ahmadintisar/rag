@@ -36,7 +36,15 @@ a[href*="gradio.app"] {
     border-radius: 50% !important;
 }
 """
-#theme=gr.themes.Default(),
+
+brand_images = [
+        "images/techbyorigen_logo.jpeg"
+]
+
+def show_image_at_index(index):
+    return brand_images[int(index)]
+
+
 with gr.Blocks(css=CSS, title="Demo Bot") as demo:
     with gr.Tabs():
         with gr.TabItem("Origen"):
