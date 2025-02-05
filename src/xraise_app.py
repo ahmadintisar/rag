@@ -24,11 +24,19 @@ footer {
 a[href*="gradio.app"] {
     display: none !important;
 }
+
+/* Perfectly fit the chatbot avatar images */
+#chatbot .avatar {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+}
 """
 
 with gr.Blocks(theme=gr.themes.Default(), css = CSS, title="Demo Bot") as demo:
     with gr.Tabs():
-        with gr.TabItem("Origen ChatBot"):
+        with gr.TabItem("Origen"):
             ##############
             # First ROW:
             ##############
