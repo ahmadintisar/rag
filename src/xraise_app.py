@@ -25,20 +25,20 @@ a[href*="gradio.app"] {
     display: none !important;
 }
 
-/* Attempt various fallback selectors to ensure the image fits */
-#chatbot .avatar img,
-#chatbot .avatar > img,
-#chatbot .gradio-chatbot-avatar,
-#chatbot .chatbot-avatar {
-    width: 50px !important;
-    height: 50px !important;
-    object-fit: cover !important;
-    border-radius: 50% !important;
-}
+# /* Attempt various fallback selectors to ensure the image fits */
+# #chatbot .avatar img,
+# #chatbot .avatar > img,
+# #chatbot .gradio-chatbot-avatar,
+# #chatbot .chatbot-avatar {
+#     width: 50px !important;
+#     height: 50px !important;
+#     object-fit: cover !important;
+#     border-radius: 50% !important;
+# }
 """
 
 brand_images = [
-        "images/techbyorigen_logo.jpeg"
+        "images/branded_content.png"
 ]
 
 def show_image_at_index(index):
