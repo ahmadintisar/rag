@@ -84,10 +84,10 @@ with gr.Blocks(theme=gr.themes.Default(), css = CSS, title="Demo Bot") as demo:
                         '.doc'
                     ],
                     file_count="multiple")
-                temperature_bar = gr.Slider(minimum=0, maximum=1, value=0, step=0.75,
+                temperature_bar = gr.Slider(minimum=0, maximum=1, value=0, step=0.1,
                                             label="Creativity", info="Choose between 0 and 1")
                 rag_with_dropdown = gr.Dropdown(
-                    label="RAG with", choices=["Upload doc: Process for RAG", "Upload doc: Give Full summary"]) #"Preprocessed doc", , value="Preprocessed doc"
+                    label="RAG with", choices=["Upload doc: Process for RAG", "Upload doc: Give Full summary"], value="Upload doc: Process for RAG") #"Preprocessed doc", , value="Preprocessed doc"
                 clear_button = gr.ClearButton([input_txt, chatbot])
             ##############
             # Process:
