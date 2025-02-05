@@ -107,6 +107,13 @@ with gr.Blocks(css=CSS, title="Demo Bot") as demo:
                 rag_with_dropdown = gr.Dropdown(
                     label="RAG with", choices=["Upload doc: Process for RAG", "Upload doc: Give Full summary"], value="Upload doc: Process for RAG") #"Preprocessed doc", , value="Preprocessed doc"
                 clear_button = gr.ClearButton([input_txt, chatbot])
+
+            with gr.Row() as row_four:
+                displayed_logo = gr.Image(
+                    value="images/techbyorigen_logo.jpeg",
+                    label="Branded Image",
+                    show_label=False
+                )
             ##############
             # Process:
             ##############
