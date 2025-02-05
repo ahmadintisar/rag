@@ -24,7 +24,7 @@ a[href*="gradio.app"] {
     display: none !important;
 }
 
-/* Attempt various fallback selectors to ensure the image fits */
+/* Attempt various fallback selectors to ensure the chatbot avatar fits */
 #chatbot .avatar img,
 #chatbot .avatar > img,
 #chatbot .gradio-chatbot-avatar,
@@ -34,6 +34,18 @@ a[href*="gradio.app"] {
     object-fit: cover !important;
     border-radius: 50% !important;
 }
+
+/* Center the brand image column content */
+#brand_column > .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hide the download button for the brand image */
+#branded_logo .gr-image-download-btn {
+    display: none !important;
+}
 """
 
 with gr.Blocks(css=CSS, title="Demo Bot") as demo:
@@ -41,12 +53,14 @@ with gr.Blocks(css=CSS, title="Demo Bot") as demo:
         with gr.TabItem("Origen"):
             # ROW ONE: Brand Image (left) + Chatbot (center) + Reference Bar (hidden)
             with gr.Row():
-                with gr.Column(scale=1):
-                    # Show your brand logo here on the left
+                with gr.Column(scale=1, elem_id="brand_column"):
+                    # Centered brand image on the left
                     displayed_logo = gr.Image(
-                        value="images/branded_content.png",
+                        value="images/techbyorigen_logo.jpeg",
                         label="Branded Image",
-                        show_label=False
+                        show_label=False,
+                        interactive=False,
+                        elem_id="branded_logo"
                     )
 
                 with gr.Column(scale=2) as chatbot_output:
