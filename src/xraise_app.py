@@ -110,7 +110,7 @@ with gr.Blocks(css=CSS, title="Demo Bot") as demo:
 
             with gr.Row() as row_four:
                 displayed_logo = gr.Image(
-                    value="images/techbyorigen_logo.jpeg",
+                    value="images/branded_content.png",
                     label="Branded Image",
                     show_label=False
                 )
