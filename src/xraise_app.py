@@ -25,16 +25,19 @@ a[href*="gradio.app"] {
     display: none !important;
 }
 
-/* Perfectly fit the chatbot avatar images */
-#chatbot .avatar {
+/* Attempt various fallback selectors to ensure the image fits */
+#chatbot .avatar img,
+#chatbot .avatar > img,
+#chatbot .gradio-chatbot-avatar,
+#chatbot .chatbot-avatar {
     width: 50px !important;
     height: 50px !important;
     object-fit: cover !important;
     border-radius: 50% !important;
 }
 """
-
-with gr.Blocks(theme=gr.themes.Default(), css = CSS, title="Demo Bot") as demo:
+#theme=gr.themes.Default(),
+with gr.Blocks(css=CSS, title="Demo Bot") as demo:
     with gr.Tabs():
         with gr.TabItem("Origen"):
             ##############
@@ -59,11 +62,10 @@ with gr.Blocks(theme=gr.themes.Default(), css = CSS, title="Demo Bot") as demo:
                         bubble_full_width=True,
                         height=500,
                         avatar_images=(
-                            ("images/user.png"), "images/techbyorigen_logo.jpeg"),
-                        # render=True,
-                        # interactive=True
+                            "images/user.png",
+                            "images/techbyorigen_logo.jpeg"
+                        ),
                     )
-                    # **Adding like/dislike icons
                     chatbot.like(UISettings.feedback, None, None)
             ##############
             # SECOND ROW:
@@ -122,7 +124,5 @@ with gr.Blocks(theme=gr.themes.Default(), css = CSS, title="Demo Bot") as demo:
 
 if __name__ == "__main__":
     import os
-
     port = int(os.environ.get("PORT", 7860))  # Default to 7860 if no PORT is set
     demo.launch(server_name="0.0.0.0", server_port=port)
-    # demo.launch(css="footer {visibility: hidden}")
