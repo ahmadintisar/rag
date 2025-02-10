@@ -1,11 +1,6 @@
 
 import os
-#from utils import prepare_vectordb
-#from utils.prepare_vectordb import PrepareVectorDB
-#from prepare_vectordb import PrepareVectorDB
-#from utils.load_config import LoadConfig
 from load_config import LoadConfig
-#from utils import prepare_vectordb
 from prepare_vectordb import PrepareVectorDB
 CONFIG = LoadConfig()
 def upload_data_manually() -> None:
